@@ -63,10 +63,10 @@ In this example after any change of ami id, due to the triggers map, the null_re
 Here the provisioner only runs an echo command and write the first instance public_dns to stdout but more powerfull actions can be configured.
 
 
-## Repositery pre-requirements
+## Repository pre-requirements
 
 * [AWS Account](https://aws.amazon.com/) and basical knowledge of [Terraform with AWS](https://learn.hashicorp.com/collections/terraform/aws-get-started)
-* [Git installed](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) installed
 
 ## How to use this repo
 
