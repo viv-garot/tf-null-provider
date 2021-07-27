@@ -72,6 +72,7 @@ Here the provisioner only runs an echo command and write the first instance publ
 
 - Clone
 - Run
+- Cleanup
 
 ---
 
@@ -254,3 +255,11 @@ Apply complete! Resources: 2 added, 0 changed, 2 destroyed.
 
 
 * Note how this time the null resource is re-created and as a result the provisioner is also re-run
+
+### Cleanup
+
+* Run terraform destroy to delete the created ec2 instances
+
+```
+terraform destroy
+```
