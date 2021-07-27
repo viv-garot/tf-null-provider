@@ -13,8 +13,7 @@ The null provider consists of :
 Historically, the null_data_source was typically used to construct intermediate values to re-use elsewhere in configuration. The same is now achieved using [locals](https://www.terraform.io/docs/language/values/locals.html). _We'll not cover the __deprecated null_data_source__ in this repo._
 
 * The **null_resource** resource. Instances of null_resource are treated like normal resources, but they don't do anything.
-_The main advantage of this resource is the __ability to update or recreate other resources in response of a null_resource change__ via the triggers attribute._
-Triggers are a map of values, when changed, that will cause (the null resource to be replaced and) the set of associate provisioners to re-run
+_The main advantage of this resource is the __ability to update or recreate other resources in response of a null_resource change.__
 
 Taking the below main.tf file example :
 
@@ -57,7 +56,7 @@ resource "null_resource" "null" {
 This terraform file creates :
 * 2 ubuntu aws instances
 * A null_resource resource which :
-  * Gather data of both instances and create a concatenated string of the ami ids via the join function within the triggers map to compare upon on next run
+  * Gather data of both instances and create a concatenated string of the ami ids via the join function within the triggers map to compare upon on next run. Triggers are a map of values, when changed, that will cause (the null resource to be replaced and) the set of associate provisioners to re-run
   * Run a simple echo command via the local-exec provisioner 
 
 In this example after any change of ami id, due to the triggers map, the null_resource will be re-created and the provisioner will be re-run.
